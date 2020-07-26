@@ -1,17 +1,13 @@
 ﻿using Geodesics.Api.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Geodesics.Api.Library
 {
-	public class DistancePoint : IEquatable<DistancePoint>, IDistancePoint
+	public class DistancePoint : IDistancePoint
 	{
 		public double Latitude { get; set; }
 		public double Longitude { get; set; }
 
-		public bool Equals(DistancePoint other)
+		public bool Equals(IDistancePoint other)
 		{
 			return Latitude == other.Latitude && Longitude == other.Longitude;
 		}

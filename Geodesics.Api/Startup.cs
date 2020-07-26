@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using Geodesics.Api.Contracts;
 using Geodesics.Api.Infrastructure.Swagger;
+using Geodesics.Api.Library;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -45,6 +47,9 @@ namespace Geodesics.Api
             });
             // Register your services here
             // e.g. services.AddScoped<IService, Service>();
+            services.AddScoped<IDistanceCalculationStrategy, DistanceCalculationStrategy>();
+            services.AddScoped<IDistanceCalculator, PythagorousDistanceCalculator>();
+            services.AddScoped<IDistanceCalculator, GeodesicCurveDistanceCalculator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

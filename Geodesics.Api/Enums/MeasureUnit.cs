@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Geodesics.Api.Contracts
+namespace Geodesics.Api.Enums
 {
     public enum MeasureUnit
     {
